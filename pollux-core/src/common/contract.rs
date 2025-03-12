@@ -1,6 +1,8 @@
 use serde::{Deserialize, Serialize};
+use crate::common::model::{Metadata, CellId};
 
-// #[derive(Debug, Clone, Serialize, Deserialize)]
-// pub struct Message {
-//     pub origin:
-// }
+pub enum GossipPayload {
+    Join(Metadata),
+    Leave(CellId),
+    Heartbeat(CellId)
+}
